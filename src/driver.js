@@ -15,10 +15,14 @@ console.log = winston.info
 var houmioBridge = process.env.HOUMIO_BRIDGE || "localhost:3001"
 console.log("houmioBridge:", houmioBridge)
 
-const TelldusAPI = require('telldus-live')
-const {publicKey, privateKey, token, tokenSecret} = require('./secret.json')
+var TelldusAPI = require('telldus-live')
+var secret = require('./secret.json')
+var publicKey = secret.publicKey
+var privateKey = secret.privateKey
+var token = secret.token
+var tokenSecret = secret.tokenSecret
 
-const cloud = new TelldusAPI.TelldusAPI({ publicKey, privateKey })
+var cloud = new TelldusAPI.TelldusAPI({ publicKey: publicKey, privateKey: privateKey })
   .login(token, tokenSecret, function(err, user) {
     if (!!err){
       return console.log('login error:', err.message)
