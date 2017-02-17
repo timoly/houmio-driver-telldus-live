@@ -1,0 +1,14 @@
+{
+  "name": "houmio-driver-telldus-live",
+  "version": "1.0.0",
+  "description": "Houm.io driver for telldus live",
+  "license": "MIT",
+  "main": "src/driver.js",
+  "homepage": "",
+  "dependencies": {
+    "baconjs": "^0.7.66",
+    "carrier": "^0.1.14",
+    "telldus-live": "0.2.1",
+    "winston": "^1.0.1"
+  }
+}
